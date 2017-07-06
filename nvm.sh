@@ -803,10 +803,10 @@ nvm() {
         fi
       else
         # Handle options
-        while [[ $# > 0 ]]; do
+        while [ $# > 0 ]; do
                 key="$1"
                 shift
-          case $key in 
+          case $key in
                   --print-paths)
               PRINT_PATHS=true
             ;;
@@ -837,7 +837,7 @@ nvm() {
           return 127
         fi
       elif [ "_$VERSION" = "_∞" ]; then
-        echo "The alias \"$1\" leads to an infinite loop. Aborting." >&2
+        echo "The alias \"$key\" leads to an infinite loop. Aborting." >&2
         return 8
       fi
 
